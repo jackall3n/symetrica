@@ -8,13 +8,14 @@ export function findTopWords(sentence: string, size: number) {
     return []
   }
 
-  const words = sentence
+  // Remove non-word characters (this probably isn't a perfect set of characters)
+  const sanitized = sentence.replace(/[^A-Z0-9- \n]/gmi, '')
+
+  const words = sanitized
     // Split into words by space or new line
     .split(/[ \n]/gmi)
     // Normalize to lowercase and remove double spaces
     .map(word => word.toLowerCase().trim())
-    // Remove non-word characters (this probably isn't a perfect set of characters)
-    .map(word => word.replace(/[^A-Z0-9-]/gmi, ''))
     // Remove items that don't contain any letters
     .filter(Boolean);
 
