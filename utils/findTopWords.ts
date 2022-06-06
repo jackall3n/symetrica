@@ -9,8 +9,8 @@ export function findTopWords(sentence: string, size: number) {
   }
 
   const words = sentence
-    // Split into words
-    .split(' ')
+    // Split into words by space or new line
+    .split(/[ \n]/gmi)
     // Normalize to lowercase and remove double spaces
     .map(word => word.toLowerCase().trim())
     // Remove non-word characters (this probably isn't a perfect set of characters)
