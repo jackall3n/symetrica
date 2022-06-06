@@ -29,7 +29,7 @@ const Home: NextPage<InferGetStaticPropsType<typeof getStaticProps>> = ({ code }
         </div>
       </div>
 
-      <div className="flex flex-1 flex-col">
+      <div className="flex flex-1 flex-col overflow-hidden">
         <h2 className="text-4xl font-medium p-3">
           The Results
         </h2>
@@ -44,9 +44,8 @@ const Home: NextPage<InferGetStaticPropsType<typeof getStaticProps>> = ({ code }
           />
         </label>
 
-        <div className="m-3 overflow-auto">
+        <div className="m-3 overflow-hidden flex flex-col">
           <div className="flex justify-between items-center text-base">
-
             <div className="font-medium">Showing top {pluralize('result', size, true)}:</div>
 
             <div className="flex items-center justify-center font-medium">
@@ -65,7 +64,7 @@ const Home: NextPage<InferGetStaticPropsType<typeof getStaticProps>> = ({ code }
             </div>
           </div>
 
-          <div className="shadow-lg mt-3">
+          <div className="shadow-lg mt-3 overflow-auto">
             <Code code={JSON.stringify(topWords, undefined, 2)} language="json" />
           </div>
         </div>

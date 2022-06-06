@@ -22,3 +22,7 @@ yarn dev
 ```
 
 Open [http://localhost:6565](http://localhost:6565) with your browser to see the result.
+
+## Testing
+
+Jest has been used for the testing framework. Visit [findTopWords.test.ts](https://github.com/jackall3n/symetrica/blob/main/utils/findTopWords.test.ts) to see an example.
