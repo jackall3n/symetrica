@@ -1,9 +1,14 @@
+export interface IWordResult {
+  word: string;
+  count: number;
+}
+
 /**
  * Get most popular words in sentence
  * @param sentence
  * @param size
  */
-export function findTopWords(sentence: string, size: number) {
+export function findTopWords(sentence: string, size: number): IWordResult[] {
   if (!sentence) {
     return []
   }
